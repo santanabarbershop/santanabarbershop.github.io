@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://santanabarbershop.github.io/home/sitemap.xml
-Sitemap: https://santanabarbershop.github.io/home/sitemap.txt
