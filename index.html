@@ -1,11 +1,990 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <!-- Responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <!-- Descrição -->
+    <meta name="description" content="Santana Barber Shop em Serra Dourada II – Serra ES. Cortes masculinos, barba, degradê e atendimento de qualidade. Agende pelo WhatsApp.">
+
+    <!-- Idioma -->
+    <meta name="language" content="pt-BR">
+
+    <!-- Localização -->
+    <meta name="geo.region" content="BR-ES">
+    <meta name="geo.placename" content="Serra, Espírito Santo">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Santana Barber Shop – Corte Masculino em Serra ES">
+    <meta property="og:description" content="Cortes modernos, barba bem feita e atendimento de confiança em Serra Dourada II.">
+    <meta property="og:image" content="https://santanabarbershop.github.io/IMGs/logo.png/">
+    <meta property="og:url" content="https://santanabarbershop.github.io/">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Favicon -->
+    <link rel="icon" href="IMGs/razor.png" type="image/png">
+
+    <!-- Título -->
+    <title>Santana Barber Shop | Corte Masculino em Serra Dourada II – Serra ES</title>
+
+
+    <!-- Google fontes: Sancreek-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sancreek&display=swap" rel="stylesheet">
+
+    <!-- Para dizer que essa é página principal em caso de duplicatas -->
+    <link rel="canonical" href="https://santanabarbershop.github.io/">
+
+    <style>
+
+ /* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+
+    scroll-behavior: smooth;
+}
+
+
+/* GERAL */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #3b3b3b;
+    color: #f6f6f6;
+    line-height: 1.6;
+    padding-top: 24%;
+}
+
+.cabecalho {
+    background-color: #338f81;
+    color: #ffffff;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    border-bottom: 4px solid #215a51;
+    top: 0;
+
+    z-index: 1;
+}
+
+.cabecalho h1 {
+    font-size: 1.5rem;
+    flex: 1;
+    margin-right: 4%;
+
+  font-family: "Sancreek", serif;
+  font-weight: 400;
+  font-style: normal;
+  /* text-shadow: 5px 2px 10px rgb(17, 47, 53); */
+
+    white-space: nowrap;
+}
+
+
+
+/* BOTÃO HAMBÚRGUER */
+.botaoMenu {
+    font-size: 24.5px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 5%;
+
+    text-shadow: 5px 2px 10px rgb(17, 47, 53);
+}
+
+/* MENU LATERAL */
+.menu {
+
+    /* posicionamento */
+    position: fixed;
+    top: 0;
+    left: -260px; /* escondido */
+    
+
+    width: 250px;
+    height: 100%;
+
+    /* background-image: url(IMGs/v894-kul-11-e.jpg);
+    background-position: center;
+    background-size: cover; */
+
+    background-color: #225c53;
+    background: linear-gradient(#2c7b6f, #2c7b6f, #133631, #000000);
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    /* animação ao entrar e sair */
+    transition: left 0.4s ease;
+
+     z-index: 2;
+
+     border-right: 3px solid black;
+     overflow-y: auto;
+}
+
+/* LINKS DO MENU */
+.menu a {
+    color: #fff;
+    padding: 7px 15px;
+    border-bottom: 5px solid #000000;
+    /* border-top: 3px solid #000000; */
+
+    text-shadow: 2px 3px 2px black;
+}
+
+/* MENU ABERTO */
+.menu.ativo {
+    left: 0;
+}
+
+nav img{
+    margin: auto;
+    margin-top: 60px;
+}
+
+/* MENU */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #369587;
+   /*  border: 1px solid #ffffff; */
+   /*  border-radius: 0px; */
+}
+
+.banner{
+    width: 100%;
+    height: 370px;
+    background-image: url(IMGs/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-top: 5px solid rgb(37, 37, 37);
+    border-bottom: 5px solid rgb(37, 37, 37);
+    
+}
+
+/* CARROSSEL */
+.carrossel {
+    width: 100%;
+    height: 250px;
+    margin: auto;
+
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid rgb(37, 37, 37);
+    border-bottom: 4px solid rgb(37, 37, 37);
+    display: flex;
+    border-radius: 15px;
+}
+
+.carrossel img {
+    width: 100%;
+    height: 100%;
+
+    object-fit:cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carrossel img.ativo {
+    opacity: 1;
+}
+
+.conteinerImg{
+    display: none;
+    justify-content: space-around;
+    gap: 10%;
+    margin: 0px 0px 5% 0px;
+}
+
+.img1{
+    width: 33%;
+    height: 380px;
+    background-color: #215a51;
+
+    background-image: url(IMGs/arranjo-de-ferramentas-para-barbearia.jpg);
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    box-shadow: 2px 2px 5px black;
+    border-radius: 15px;
+    border: 3px solid black;
+}
+
+.img2{
+    width: 40%;
+    height: 430px;
+    background-color: #c827a0;
+    
+    background-image: url(IMGs/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    position: absolute;
+    top: 18%;
+    border-radius: 100%;
+    border: 2px solid rgb(231, 231, 231);
+    border-radius: 15px;
+}
+
+.img3{
+    width: 33%;
+    height: 380px;
+    background-color: #bbcb31;
+
+    background-image: url(IMGs/ferramentas-para-profissao-de-cabeleireiro.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 15px;
+    border: 3px solid black;
+}
+
+
+
+/* SEÇÕES */
+section {
+    padding: 30px 16px;
+
+    scroll-margin-top: 50px; /* serve para deixar o scroll de links numa posição correta evitando o problema do cabeçario fixo no topo da tela e cortando os titulos ao clicar nos links do menu */
+}
+
+section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+    border-bottom: 2px solid #4ac1af;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+/* SERVIÇOS */
+#servicos ul {
+    margin-top: 12px;
+    padding-left: 18px;
+}
+
+#servicos li {
+    margin-bottom: 8px;
+}
+
+/* GALERIA DE CORTES */
+.galeria-cortes {
+    margin-top: 20px;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.galeria-cortes img {
+    width: 100%;
+    height: 140px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+   box-shadow: 2px 2px 5px black;
+
+    transition: transform 0.3s ease;
+}
+
+/* pequeno efeito ao tocar/clicar */
+.galeria-cortes img:active {
+    transform: scale(0.97);
+}
+
+.mapa-container {
+    width: 100%;
+    height: 250px;
+    margin-top: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mapa-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mapa-link {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+
+/* BOTÃO WHATSAPP */
+.btn-whatsapp {
+    display: block;
+    margin-top: 15px;
+
+    width: 55px;
+    height: 55px;
+
+    background-image: url(IMGs/social_15707820.png);
+    background-size: cover;
+    background-position: center;
+
+    position: fixed;
+    left: 81%;
+    bottom: 3%;
+
+
+    padding: 12px;
+    border: 3px solid rgb(22, 193, 79);
+    border-radius: 100%;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 425px){
+
+    .menu {
+    left: -460px; /* escondido */
+    width: 300px;
+}
+}
+
+@media (min-width: 500px){
+
+    .menu {
+    left: -460px; /* escondido */
+    width: 380px;
+}
+}
+
+@media (min-width: 510px) {
+
+    body {
+        padding-top: 90px;
+    }
+
+    .banner{
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    }
+
+    .carrossel {
+        width: 90%;
+        height: 300px;
+        margin: auto;
+
+        position: relative;
+        overflow: hidden;
+        border-top: 4px solid rgb(37, 37, 37);
+        border-bottom: 4px solid rgb(37, 37, 37);
+        display: flex;
+        border-radius: 15px;
+    }
+
+    .galeria-cortes {
+   
+    width: 90%;
+    margin: auto;
+}
+
+    .galeria-cortes img {
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+   box-shadow: 2px 2px 5px black;
+
+    transition: transform 0.3s ease;
+}
+
+}
+
+@media (min-width: 620px) {
+
+     .menu {
+    left: -460px; /* escondido */
+    width: 430px;
+}
+
+    .banner{
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    border-radius: 15px;
+    }
+}
+
+@media (min-width: 720px) {
+
+    .menu {
+    left: -460px; /* escondido */
+    width: 460px;
+}
+}
+
+/* RESPONSIVIDADE PRA TABLET */
+@media (min-width: 768px) {
+
+
+    .carrossel {
+        height: 450px;
+        width: 90%;
+        border-radius: 6px;
+    
+    }
+
+    .galeria-cortes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn-whatsapp {
+        left: auto;
+        right: 30px;
+        top: auto;
+        bottom: 30px;
+    }
+
+    .cabecalho h1 {
+    font-size: 1.8rem;
+    flex: 1;
+    margin-right: 5%;
+    }
+
+    /* BOTÃO HAMBÚRGUER */
+    .botaoMenu {
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 864px) {
+
+    body{
+        text-align: center;
+    }
+
+     #servicos{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+    left: -570px; /* escondido */
+    width: 570px;
+}
+
+.banner{
+    width: 75%;
+    margin: auto;
+    border-radius: 15px;
+    }
+
+    .carrossel {
+        width: 75%;
+        height: 450px;
+        margin: auto;
+
+        position: relative;
+        overflow: hidden;
+        border-top: 4px solid rgb(37, 37, 37);
+        border-bottom: 4px solid rgb(37, 37, 37);
+        display: flex;
+        border-radius: 15px;
+    }
+
+}
+
+/* RESPONSIVIDADE PRA DESKTOP */
+@media (min-width: 1024px) {
+
+
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333333;
+    color: #f6f6f6;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 13%;
+}
+
+p, li{
+    font-size: larger;
+}
+
+    .banner{
+        display: none;
+    }
+
+    /* header mais elegante */
+    .cabecalho {
+        justify-content: center;
+        height: 60px;
+        background: rgb(37, 104, 94);
+       border-bottom: 2px solid black;
+        /* padding: 0 40px; */
+    }
+
+    .cabecalho h1 {
+    font-size: 2rem;
+    flex: 1;
+    margin-right: 0%;
+    color: rgb(237, 237, 237);
+/*     text-shadow: 2px 5px 5px black; */
+    
+}
+
+    .botaoMenu {
+        display: none;
+    }
+
+    /* menu vira horizontal */
+    .menu {
+        position: static;
+        flex-direction: row;
+        height: 40px;
+        width: 100%;
+        background: rgb(35, 35, 35);
+        padding: 0;
+        gap: 30px;
+        left: 0;
+        transition: none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: fixed;
+        top: 60px;
+        border-bottom: 5px solid black;
+    }
+
+    .menu a {
+        border: none;
+        padding: 0px 30px;
+        margin: 8px 0px;
+        font-size: 1rem;
+        border-radius: 15px;
+        background-color: rgb(35, 35, 35);
+        color: rgb(196, 196, 196);
+        text-shadow: none;
+    }
+
+    .menu img{
+        display: none;
+    }
+
+    .conteinerImg{
+    display: flex;
+    /* justify-content: space-around;
+    gap: 10%;
+    margin-top: 0.5%; */
+    
+}
+
+.carrossel{
+    width: 45%;
+}
+
+    /* section {
+        max-width: 1500px;
+        scroll-margin-top: 75px;
+        margin: 0px 10% 2% 10%;
+        text-align: center;
+        font-size: larger;
+    } */
+
+    section h2{
+        font-size: 27px;
+    }
+
+    #servicos{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria-cortes {
+        margin-top: 5%;
+        grid-template-columns: repeat(4, 220px);
+        display: flex;
+        justify-content: center;
+        max-width: 1200px
+    }
+
+    .galeria-cortes img{
+        width: 170px;
+    }
+
+    .menu a:hover {
+    color: #f2f2f2;
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+
+
+.galeria-cortes img:hover {
+    transform: scale(1.05);
+}
+
+section {
+
+    scroll-margin-top: 90px; /* serve para deixar o scroll de links numa posição correta evitando o problema do cabeçario fixo no topo da tela e cortando os titulos ao clicar nos links do menu */
+}
+
+#localizacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-whatsapp {
+    display: block;
+    margin-top: 15px;
+
+    width: 65px;
+    height: 65px;
+
+    background-image: url(IMGs/social_15707820.png);
+    background-size: cover;
+    background-position: center;
+
+    position: fixed;
+    left: 90%;
+    top: 85%;
+
+
+    padding: 12px;
+    border: 3px solid rgb(22, 193, 79);
+    border-radius: 100%;
+    text-decoration: none;
+}
+
+.mapa-container {
+    width: 45%;
+    height: 300px;
+    margin-top: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+}
+
+@media (min-width: 1900px) {
+
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mapa-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+}
+
+
+    </style>
 </head>
+
 <body>
-    <p>Site da Santana Barber Shop</p>
+    
+
+    <header class="cabecalho">
+
+        <button class="botaoMenu" onclick="mostrarMenu()">☰</button>
+        <h1>Santana Barber Shop</h1>
+    
+    </header>
+
+    <nav id="menu" class="menu">
+
+    <a href="#inicio" onclick="mostrarMenu()">Início</a>
+    
+    <a href="#sobre" onclick="mostrarMenu()">Sobre</a>
+    
+    <a href="#servicos" onclick="mostrarMenu()">Serviços</a>
+    
+    <a href="#horario" onclick="mostrarMenu()">Horário</a>
+    
+    <a href="#contato" onclick="mostrarMenu()">Contato</a>
+
+    <img style="width: 120px;" src="IMGs/razor.png" alt="tesoura">
+    </nav>
+
+    <div class="banner"></div>
+
+    <div class="conteinerImg">
+    <div class="img1"></div>
+    <div class="img2"></div>
+    <div class="img3"></div>
+    </div>
+
+    <!-- SEÇÃO INICIAL -->
+    <section id="inicio">
+        <h2>Seja bem-vindo</h2>
+        
+        <p>Se está procurando um bom espaço pra cortar o cabelo, veio ao lugar certo e nós vamos provar isso!</p>
+
+        <br>
+
+        <p>Aqui temos cortes modernos, barba bem feita e um ambiente pensado pra você se sentir em casa.
+Chegue como quiser. Saia com presença.
+        </p>
+        <br> 
+        
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <h2>Sobre a Barbearia</h2>
+        <p>
+            As pessoas que não nos conhecem, a primeira vista, podem pensar que somos uma barbearia comum, como as outras, mas tem algo que elas ainda não sabem: Nós somos os melhores!
+        </p>
+
+        <br>
+
+        <div class="carrossel">
+
+    <img src="IMGs/carrossel4.jpg" alt="Corte 4">
+
+    <img src="IMGs/carrossel1.png" alt="Corte 1">
+
+    <img src="IMGs/carrossel2.png" alt="Corte 2">
+
+    <img src="IMGs/carrossel3.png" alt="Corte 3">
+
+
+    
+    </div>
+
+        <br>
+
+        <p>Aqui, cada corte é feito com atenção aos detalhes, respeito ao seu estilo e compromisso com a qualidade.
+Mais do que um visual novo, oferecemos uma experiência <br><br>— Um espaço feito pra quem valoriza um bom corte, uma boa conversa e um atendimento de confiança.</p>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+        <h2>Serviços</h2>
+
+        <ul>
+            <li>Corte navalhado</li>
+            <li>Corte degradê (máquina)</li>
+            <li>Cabelo + barba</li>
+            <li>barba</li>
+            <li>Pézinho</li>
+            <li>Sobrancelhas</li>
+            <li>Penteado</li>
+            <li>Alisamento</li>
+            <li>Pigmentação</li>
+            <li>Luzes</li>
+            <li>Platinado</li>
+        </ul>
+
+        <ul></ul>
+
+        <div class="galeria-cortes">
+            <img src="IMGs/Captura de tela 2026-01-03 102457.png " alt="Corte masculino 1">
+
+            <img src="IMGs/Captura de tela 2026-01-03 112138.png" alt="Corte masculino 2">
+            
+            <img src="IMGs/WhatsApp Image 2026-01-02 at 19.42.48.jpeg">
+            
+            <img src="IMGs/ChatGPT Image 3 de jan. de 2026, 11_25_09.png" alt="Corte masculino 4">
+            
+            <img src="IMGs/Captura de tela 2026-01-03 111548.png" alt="Corte masculino 1">
+            
+            <img src="IMGs/Captura de tela 2026-01-03 111831.png" alt="Corte masculino 2">
+        </div>
+
+    </section>
+
+    <!-- HORÁRIO -->
+    <section id="horario">
+        <h2 style="margin-bottom: 18px;">Horário de Funcionamento</h2>
+
+        <p style="margin-bottom: 8px; font-weight: 700;">Segunda a Sexta:</p>
+        
+        <p>08h às 11h da manhã <br>
+            13h - 18:30 da tarde</p>
+
+        <br>
+            
+        <p style="margin-bottom: 8px; font-weight: 700;">Sábado:</p>
+        <p>08h às 11h da manhã <br>
+            13h - 18:00 da tarde</p>
+        
+        <br>
+
+        <p style="margin-bottom: 8px; font-weight: 700;">Domingo:</p>
+        <p>08h às 11h da manhã</p>
+
+        <br>
+
+        <p>Obs.: Aos domingos, qualquer um dos serviços listados anteriormente terá um acréscimo de R$ 5,00. Essa medida reflete a valorização do tempo e do esforço de nossos profissionais.</p>
+            
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao">
+        <h2>Localização</h2>
+
+        <p>
+            Rua Crisalida, nº 9 <br>
+            Serra Dourada II - Serra / ES
+        </p>
+
+        <div class="mapa-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d936.4557147376692!2d-40.24471033047969!3d-20.141436498830934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81e1e472c5ee7%3A0x4b7b4ae113e2b974!2sR.%20Crisalida%2C%209%20-%20Serra%20Dourada%20II%2C%20Serra%20-%20ES%2C%2029171-238!5e0!3m2!1spt-BR!2sbr!4v1767576803191!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <a 
+        class="mapa-link"
+        href="https://maps.app.goo.gl/oF3vg1Pm63kg4hs7A"
+        target="_blank"
+        >
+        📍 Google Maps
+        </a>
+
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+        <h2>Contato</h2>
+
+        <p>
+            Click no botão do WhatsApp pra agendar seu corte.
+        </p>
+
+        <br>
+
+        <p>
+            Instagram: @denys_barbers
+        </p>
+    </section>
+
+    <section id="pagamento">
+        <h2>Formas de pagamento</h2>
+
+        <p>
+           Dinheiro, cartão, pix e picpay.
+        </p>
+
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Santana Barber Shop. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <a class="btn-whatsapp" href="https://wa.me/5527997663944"></a>
+
+<script>
+const menu = document.getElementById("menu");
+const botaoMenu = document.querySelector(".botaoMenu");
+
+function mostrarMenu() {
+    menu.classList.toggle("ativo");
+}
+
+// fecha o menu ao clicar fora
+document.addEventListener("click", (event) => {
+    const clicouNoMenu = menu.contains(event.target);
+    const clicouNoBotao = botaoMenu.contains(event.target);
+
+    if (!clicouNoMenu && !clicouNoBotao && menu.classList.contains("ativo")) {
+        menu.classList.remove("ativo");
+    }
+});
+
+
+//carrossel
+const imagens = document.querySelectorAll(".carrossel img");
+let indiceAtual = 0;
+
+setInterval(() => {
+    imagens[indiceAtual].classList.remove("ativo");
+
+    indiceAtual++;
+
+    if (indiceAtual >= imagens.length) {
+        indiceAtual = 0;
+    }
+
+    imagens[indiceAtual].classList.add("ativo");
+}, 3300); // troca a cada 3 segundos
+
+</script>
+
 </body>
 </html>
+
